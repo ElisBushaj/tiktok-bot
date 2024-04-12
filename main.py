@@ -4,7 +4,7 @@ from math import ceil
 import requests
 
 # Constants
-API_URL = "https://tiktok-views1.p.rapidapi.com/"
+API_URL = "https://tiktok-views1.p.rapidapi.com"
 HEADERS = {
     "X-RapidAPI-Key": "",
     "X-RapidAPI-Host": "tiktok-views1.p.rapidapi.com"
@@ -26,7 +26,7 @@ def main():
     print(f"Total iterations: {total_iterations}")
 
     while success_request_count < total_iterations:
-        response = requests.get(f"{API_URL}?videoUrl={video_url}", headers=HEADERS)
+        response = requests.get(f"{API_URL}/views?videoUrl={video_url}", headers=HEADERS)
         if response.status_code == 200:
             success_request_count += 1
             print(f"Request {success_request_count} was successful")
